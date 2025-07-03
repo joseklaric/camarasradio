@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitor de Cámaras</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Sistema de Monitoreo</h1>
+      <div class="server-status">
+        <span id="server-time">--:--:--</span>
+        <span class="status-indicator connected" id="server-status">Online</span>
+      </div>
+    </header>
+    
+    <div class="controls">
+      <button id="cam1-btn" class="camera-btn">Cámara 1</button>
+      <button id="cam2-btn" class="camera-btn">Cámara 2</button>
+      <button id="cam3-btn" class="camera-btn">Cámara 3</button>
+      <button id="cam4-btn" class="camera-btn">Cámara 4</button>
+      <button id="refresh-btn" class="action-btn">⟳ Actualizar</button>
+    </div>
+    
+    <div id="video-container">
+      <div class="loading-overlay">
+        <div class="spinner"></div>
+        <div class="loading-text" id="loading-text">Iniciando transmisión...</div>
+      </div>
+      <video id="live-feed" autoplay playsinline muted></video>
+      <div class="video-controls">
+        <button id="fullscreen-btn" title="Pantalla completa">⛶</button>
+        <button id="mute-btn" title="Silenciar">🔊</button>
+      </div>
+    </div>
+    
+    <div class="camera-info">
+      <h3>Información de Transmisión</h3>
+      <div class="info-grid">
+        <div class="info-item">
+          <label>Cámara:</label>
+          <span id="camera-name">No seleccionada</span>
+        </div>
+        <div class="info-item">
+          <label>Estado:</label>
+          <span class="status-indicator disconnected" id="connection-status"></span>
+          <span id="status-text">Desconectado</span>
+        </div>
+        <div class="info-item">
+          <label>Última actualización:</label>
+          <span id="last-update">--/--/---- --:--:--</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>

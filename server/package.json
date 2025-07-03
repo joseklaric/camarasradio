@@ -1,0 +1,20 @@
+{
+  "name": "rtsp-proxy-server",
+  "version": "1.0.0",
+  "description": "Servidor para convertir RTSP a HLS",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "basic-auth": "2.0.1",
+    "cors": "2.8.5",
+    "express": "4.21.2",
+    "express-basic-auth": "1.2.1",
+    "ffmpeg-static": "5.1.0",
+    "fs-extra": "11.3.0",
+    "ip": "^2.0.1",
+    "morgan": "1.10.0"
+  }
+}

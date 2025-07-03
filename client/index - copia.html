@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Cámaras - Ciudad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Monitor de Cámaras de Ciudad</h1>
+        
+        <div class="controls">
+            <button id="cam1-btn" class="active">Cámara 1</button>
+            <button id="cam2-btn">Cámara 2</button>
+            <button id="cam3-btn">Cámara 3</button>
+            <button id="cam4-btn">Cámara 4</button>
+            <button id="refresh-btn" class="refresh">↻ Actualizar</button>
+        </div>
+        
+        <div id="video-container">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Cargando transmisión...</p>
+            </div>
+            <video id="live-feed" autoplay playsinline muted></video>
+            <div class="video-controls">
+                <button id="fullscreen-btn" title="Pantalla completa">⛶</button>
+                <button id="mute-btn" title="Silenciar">🔊</button>
+                <button id="snapshot-btn" title="Capturar">📷</button>
+            </div>
+        </div>
+        
+        <div class="camera-info">
+            <h3>Información de Transmisión</h3>
+            <div class="info-grid">
+                <div>
+                    <span class="label">Cámara:</span>
+                    <span id="camera-name">-</span>
+                </div>
+                <div>
+                    <span class="label">Estado:</span>
+                    <span class="status-indicator" id="status-indicator"></span>
+                    <span id="status-text">Desconectado</span>
+                </div>
+                <div>
+                    <span class="label">Actualización:</span>
+                    <span id="last-update">-</span>
+                </div>
+                <div>
+                    <span class="label">Resolución:</span>
+                    <span id="resolution-info">-</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="snapshot-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Captura de Pantalla</h3>
+                <canvas id="snapshot-canvas"></canvas>
+                <button id="download-btn">Descargar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="script.js"></script>
+</body>
+</html>
